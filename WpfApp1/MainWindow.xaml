@@ -1,0 +1,99 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="400">
+    <Grid>
+        <StackPanel  Background="LightPink">
+            <TextBlock HorizontalAlignment="Center" FontSize="25" Foreground="White" Margin="0 20 0 0" >gender</TextBlock>
+            <Grid>
+                <Border Width="130" Height="40" CornerRadius="20" Background="PaleVioletRed" Margin="10 0 160 0"
+                    MouseDown="Border_MouseDown"></Border>
+                <TextBlock FontSize="25" Margin="60 0 205 0" HorizontalAlignment="Center"  MouseDown="Border_MouseDown" Foreground="White">♂male</TextBlock>
+                 <Border Width="130" Height="40" CornerRadius="20" Background="PaleVioletRed"  Margin="160 0 10 0" MouseDown="Border_MouseDown_1"></Border>
+                <TextBlock FontSize="25" Margin="205 0 55 0" HorizontalAlignment="Center"  Foreground="White">♀female</TextBlock>
+            </Grid>
+            <TextBlock HorizontalAlignment="Center" FontSize="25" Foreground="White" >height</TextBlock>
+            <Slider Minimum="0" Maximum="200" 
+            TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"
+            x:Name="a" ValueChanged="MySlider_ValueChanged"></Slider>
+            <TextBlock HorizontalAlignment="Center" x:Name="a1">0</TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="25"  Foreground="White">weight</TextBlock>
+            <Slider Minimum="0" Maximum="200"  
+            TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"
+            x:Name="b" ValueChanged="b_ValueChanged"></Slider>
+            <TextBlock HorizontalAlignment="Center" x:Name="b1">0</TextBlock>
+           
+            <Grid Margin=" 0 50 0 0">
+                <Canvas>
+                    <Rectangle Canvas.Bottom="0" Width="400" Height="202" Fill="White"></Rectangle>
+                </Canvas>
+               
+                <Path Stroke="Black" StrokeThickness="1" Fill="LightPink" >
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigureCollection>
+                                    <PathFigure StartPoint="0,100">
+                                        <PathFigure.Segments>
+                                            <PathSegmentCollection>
+                                                <QuadraticBezierSegment Point1="100,180" Point2="200,100" />
+                                            </PathSegmentCollection>
+                                        </PathFigure.Segments>
+                                    </PathFigure>
+                                </PathFigureCollection>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Black" StrokeThickness="1" Fill="White">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigureCollection>
+                                    <PathFigure StartPoint="400,100">
+                                        <PathFigure.Segments>
+                                            <PathSegmentCollection>
+                                                <QuadraticBezierSegment Point1="300,20" Point2="200,100" />
+                                            </PathSegmentCollection>
+                                        </PathFigure.Segments>
+                                    </PathFigure>
+                                </PathFigureCollection>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+
+
+                <Border Width="100" Height="100"  CornerRadius="50"  Margin=" 250 30 40 170" Background="White" >
+                    <Image Source="542.png" Margin="33,37,32,34" RenderTransformOrigin="0.6,-0.202"></Image>
+                    <Border.Effect>
+                        <DropShadowEffect Color="#d24726" BlurRadius="16" ShadowDepth="0" Opacity="1" />
+                    </Border.Effect>
+                </Border>
+                
+            </Grid>
+
+            <TextBlock FontSize="15" Background="White" >YOUR BMI</TextBlock>
+            <Grid>
+            <TextBlock x:Name="bmi1" FontSize="60" Background="White"></TextBlock>
+                
+            </Grid>
+
+
+
+
+
+
+
+
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>
